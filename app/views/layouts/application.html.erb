@@ -11,7 +11,7 @@
   <body>
     <%= render 'shared/nav' %>
     <% flash.each do |k, v| %>
-      <div class="alert alert"><%= v %></div>
+      <div class="alert alert-<%= k %>"><%= v %></div>
     <% end %>
     <div class="container">
     <%= yield %>
