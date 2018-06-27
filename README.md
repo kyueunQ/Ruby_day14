@@ -228,7 +228,7 @@ end
 
 
 
-### n : n
+### M : N
 
 (참고: http://guides.rubyonrails.org/association_basics.html)
 
