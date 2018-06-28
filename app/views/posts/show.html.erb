@@ -8,17 +8,34 @@
   <%= @post.contents %>
 </p>
 
-<%= link_to 'Edit', edit_post_path(@post), class: 'btn btn-warning text-white' %> 
-<%= link_to 'Back', posts_path, class: 'btn btn-info' %>
-<%= link_to 'Delete', post_path(@post), method: 'DELETE', class: 'btn btn-danger' %>
+<p>
+  <strong>ImagePath:</strong>
+  <img src="<%= @post.image_path %>" width='100%'/>
+</p>
+
+<p>
+  <strong>Thumb Fill:</strong>
+  <img src="<%= @post.image_path.thumb_fill.url %>" />
+</p>
+
+<p>
+  <strong>Thumb Fit:</strong>
+  <img src="<%= @post.image_path.thumb_fit.url %>" />
+</p>
+
+</p>
+
+<%= link_to '수정', edit_post_path(@post), class: 'btn btn-warning text-white' %> 
+<%= link_to '목록', cafe_path(@post.daum), class: 'btn btn-info' %>
+<%= link_to '삭제', post_path(@post), method: 'DELETE', class: 'btn btn-danger' %><br/>
 
 <!-- 댓글 입력 폼 조립 -->
 <%= render 'comments/form', post: @post %>
 
 <!-- 댓글 리스트-->
 
-   <br>
-
+<br>
+  
 
 <table class="table">
   <thead>

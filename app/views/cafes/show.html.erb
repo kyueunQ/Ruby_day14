@@ -3,6 +3,7 @@
 
 <!-- 카페에 등록된 글목록 -->
 <h1><%= @cafe.title %></h1>
+<p><%= @cafe.description %></p>
 
 <ul class="list-group">
   <% @cafe.posts.each do |post| %>
@@ -11,6 +12,8 @@
     <span class="badge badge-primary badge-pill"><%= post.comments.count %></span>
   </li>
   <% end %>
+  <% unless @cafe.is_member?(current_user) %>
   <%= link_to '가입하기', join_cafe_path(@cafe), method: 'post', class: "btn btn-success" %>
+  <% end %>
   <%= link_to '새글쓰기', new_post_path(cafe_id: @cafe.id), class: "btn btn-info" %>
 </ul>

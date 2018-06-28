@@ -57,6 +57,15 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # bootstrap
 gem 'bootstrap', '~> 4.1.1'
 
+# seed data
 gem 'faker'
+
+# uploader
+gem 'carrierwave'
+gem 'mini_magick'
+gem "fog-aws"
+
+# credential
+gem "figaro"
 
 
